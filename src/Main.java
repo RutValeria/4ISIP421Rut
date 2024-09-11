@@ -1,15 +1,77 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+//        Задача 1: Четное или нечетное число
+//        Условие:
+//        Пользователь вводит целое число. Программа должна вывести, является ли это число четным или нечетным.
+
+//        System.out.print("Введите число: ");
+//        int num = in.nextInt();
+//        if (num % 2 == 0)
+//        {
+//            System.out.println("Число четное");
+//        }
+//        else
+//        {
+//            System.out.println("Число нечетное");
+//        }
+
+
+//        Задача 2: Минимальное из трех чисел
+//        Условие:
+//        Пользователь вводит три целых числа. Программа должна найти и вывести минимальное из них.
+
+//        System.out.print("Введите число a: ");
+//        int a = in.nextInt();
+//        System.out.print("Введите число b: ");
+//        int b = in.nextInt();
+//        System.out.print("Введите число c: ");
+//        int c = in.nextInt();
+//        int min = a; // Представим, что a минимальное
+//        if (b < min)
+//        {
+//            min = b; // b будет min, если b будет меньше min
+//        }
+//        if (c < min)
+//        {
+//            min = c; // c будет min, если c будет меньше min
+//        }
+//        System.out.println("Минимальное число: " + min);
+
+
+//        Задача 3: Таблица умножения
+//        Условие:
+//        Напишите программу, которая выводит таблицу умножения на 5 (от 1 до 10).
+
+//        for (int i = 1; i < 11; i++)
+//        {
+//            //%d — это спецификатор формата для целых чисел
+//            //%n — это спецификатор для перехода на новую строку
+//            System.out.printf("%d * 5 = %d%n", i, i * 5);
+//        }
+
+
+//        Задача 4: Сумма чисел от 1 до N
+//        Условие:
+//        Пользователь вводит целое число N. Программа должна вывести сумму всех чисел от 1 до N.
+
+//        System.out.print("Введите число: ");
+//        int N = in.nextInt();
+//        int sum = 0;
+//        for (int i = 1; i <= N; i++)
+//        {
+//            sum += i;
+//        }
+//        System.out.printf("Сумма всех чисел от 1 до %d, %d", N, sum);
+
+
+//        Задача 5: Число Фибоначчи
+//        Условие:
+//        Пользователь вводит целое число N. Программа должна вывести первые N чисел Фибоначчи.
+
     }
 }
