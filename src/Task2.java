@@ -4,7 +4,6 @@ public class Task2
     public static void main(String[] args)
     {
         Scanner in = new Scanner(System.in);
-        MathFunctions mathFunctions = new MathFunctions();
 //        1. Функция для нахождения максимума
 //        Напишите функцию, которая принимает два числа и возвращает максимальное из них. Если числа равны, выбрасывайте исключение с сообщением об ошибке.
 
