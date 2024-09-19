@@ -1,10 +1,48 @@
 public class Task3_OOP
 {
-//        1. Класс "Человек"
+    public static void main(String[] args)
+    {
+        Person person = new Person("Екатерина", 18, "Женский");
+        person.displayInfo();
+        person.increaseAge();
+        person.displayInfo();
+        person.setName("Валерия");
+        person.displayInfo();
+    }
+}
+    //        1. Класс "Человек"
 //        Создайте класс Person с полями name, age, gender. Реализуйте методы для вывода информации о человеке и увеличения его возраста. Добавьте метод для изменения имени.
+class Person
+{
+    private String name;
+    private int age;
+    private String gender;
+
+    public Person(String name, int age, String gender)
+    {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
+
+    public void displayInfo()
+    {
+        System.out.println("Name: " + name + ", Age: " + age + ", Gender: " + gender);
+    }
+
+    public void increaseAge()
+    {
+        this.age++;
+    }
+
+    public void setName(String newName)
+    {
+        this.name = newName;
+    }
+}
 //        2. Наследование: Класс "Работник" и "Менеджер"
 //        Создайте класс Worker, который наследуется от класса Person, и добавьте поле salary. Создайте класс Manager, который наследует от Worker и добавляет поле для подчиненных сотрудников.
-//
+
 //        3. Полиморфизм: Животные
 //        Создайте интерфейс Animal с методом makeSound(). Реализуйте классы Dog, Cat, и Cow, которые реализуют этот интерфейс. Продемонстрируйте полиморфизм на примере массива животных.
 //
@@ -58,4 +96,4 @@ public class Task3_OOP
 
 //        20. Игра "Крестики-нолики"
 //        Разработайте классы для игры "Крестики-нолики". Создайте класс Game, который управляет логикой игры, и классы Player, описывающие поведение игроков.
-}
+

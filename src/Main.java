@@ -78,7 +78,7 @@ public class Main
 //        {
 //            sum += i;
 //        }
-//        System.out.printf("Сумма всех чисел от 1 до %d, %d", N, sum);
+//        System.out.printf("Сумма всех чисел от 1 до %d: %d", N, sum);
 
 
 //        Задача 5: Число Фибоначчи
