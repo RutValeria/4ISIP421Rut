@@ -533,5 +533,4 @@ public class Task2
             throw new IllegalArgumentException("Строка пустая или равна null!");
         }
     }
-
 }
