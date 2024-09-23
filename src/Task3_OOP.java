@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Scanner;
 public class Task3_OOP
 {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
 //        Для 1 задачи
 
 //        Person person = new Person("Екатерина", 18, "Женский");
@@ -100,6 +100,117 @@ public class Task3_OOP
 //        university.displayAllStudents();
 //        System.out.println("\nСтуденты с оценкой >= 4.0:");
 //        university.filterByGrade(4.0);
+
+//        Для 11 задачи
+
+//        Store store = new Store();
+//        Product product1 = new Product("Яблоко", 100, 1);
+//        Product product2 = new Product("Банан", 200, 2);
+//        store.addProduct(product1);
+//        store.addProduct(product2);
+//        store.searchProduct("Яблоко").displayProduct();
+//        store.removeProduct("Банан");
+//        store.searchProduct("Банан").displayProduct();
+
+//        Для 12 задачи
+
+//        PaymentSystem creditCard = new CreditCard();
+//        PaymentSystem paypal = new PayPal();
+//        creditCard.pay(100.0);
+//        paypal.refund(50.0);
+
+//        Для 13 задачи
+
+//        UniqueID obj1 = new UniqueID();
+//        UniqueID obj2 = new UniqueID();
+//        System.out.println("Идентификатор объекта 1: " + obj1.getId());
+//        System.out.println("Идентификатор объекта 2: " + obj2.getId());
+//        System.out.println("Текущий счетчик идентификаторов: " + UniqueID.getCurrentID());
+
+//        Для 14 задачи
+
+//        Point topLeft = new Point(0, 5);
+//        Point bottomRight = new Point(5, 0);
+//        Rectangle rectangle = new Rectangle(topLeft, bottomRight);
+//        System.out.println("Площадь прямоугольника: " + rectangle.getArea());
+
+//        Для 15 задачи
+
+//        ComplexNumber num1 = new ComplexNumber(3, 4);
+//        ComplexNumber num2 = new ComplexNumber(1, 2);
+//        ComplexNumber sum = num1.add(num2);
+//        ComplexNumber difference = num1.subtract(num2);
+//        ComplexNumber product = num1.multiply(num2);
+//        ComplexNumber quotient = num1.divide(num2);
+//        System.out.println("Сложение: ");
+//        sum.display();
+//        System.out.println("Вычитание: ");
+//        difference.display();
+//        System.out.println("Умножение: ");
+//        product.display();
+//        System.out.println("Деление: ");
+//        quotient.display();
+
+//        Для 16 задачи
+
+//        Matrix m1 = new Matrix(2, 2);
+//        Matrix m2 = new Matrix(2, 2);
+//        m1.setElement(0, 0, 1);
+//        m1.setElement(0, 1, 2);
+//        m1.setElement(1, 0, 3);
+//        m1.setElement(1, 1, 4);
+//        m2.setElement(0, 0, 5);
+//        m2.setElement(0, 1, 6);
+//        m2.setElement(1, 0, 7);
+//        m2.setElement(1, 1, 8);
+//        System.out.println("Матрица 1:");
+//        m1.display();
+//        System.out.println("Матрица 2:");
+//        m2.display();
+//        Matrix sum = m1.add(m2);
+//        System.out.println("Сложение матриц:");
+//        sum.display();
+//        Matrix product = m1.multiply(m2);
+//        System.out.println("Умножение матриц:");
+//        product.display();
+
+//        Для 17 задачи
+
+//        Weapon sword = new Weapon("Меч", 10);
+//        Player player = new Player("Герой", 100, sword);
+//        Enemy enemy = new Enemy("Гоблин", 30);
+//        player.attack(enemy);
+//        enemy.takeDamage(10);
+//        if (!enemy.isAlive()) {
+//            System.out.println(enemy.getName() + " побежден!");
+//        }
+
+//        Для 18 задачи
+
+//        Customer customer = new Customer("Алиса");
+//        Product apple = new Product("Яблоко", 0.5);
+//        Product banana = new Product("Банан", 0.7);
+//        Order order = new Order(customer);
+//        order.addProduct(apple);
+//        order.addProduct(banana);
+//        order.displayOrder();
+
+//        Для 19 задачи
+
+//        Smartphone phone = new Smartphone("Samsung");
+//        Laptop laptop = new Laptop("Dell");
+//        phone.turnOn();
+//        phone.takePhoto();
+//        phone.turnOff();
+//        laptop.turnOn();
+//        laptop.code();
+//        laptop.turnOff();
+
+//        Для 20 задачи
+
+//        Game game = new Game();
+//        game.playGame();
+
     }
 }
 //        1. Класс "Человек"
@@ -467,31 +578,538 @@ public class Task3_OOP
 
 //        11. Класс "Магазин"
 //        Реализуйте класс Product с полями name, price, и quantity. Создайте класс Store, который содержит список продуктов и методы для добавления, удаления и поиска товаров по имени.
-//
+//class Product
+//{
+//    private String name;
+//    private double price;
+//    private int quantity;
+//    public Product(String name, double price, int quantity) {
+//        this.name = name;
+//        this.price = price;
+//        this.quantity = quantity;
+//    }
+//    public String getName()
+//    {
+//        return name;
+//    }
+//    public double getPrice()
+//    {
+//        return price;
+//    }
+//    public int getQuantity()
+//    {
+//        return quantity;
+//    }
+//    public void displayProduct()
+//    {
+//        System.out.println("Имя: " + name + ", Цена: " + price + ", Количество: " + quantity);
+//    }
+//}
+//class Store
+//{
+//    private ArrayList<Product> products;
+//    public Store()
+//    {
+//        products = new ArrayList<>();
+//    }
+//    public void addProduct(Product product)
+//    {
+//        products.add(product);
+//        System.out.println("Добавленный товар: " + product.getName());
+//    }
+//    public void removeProduct(String name)
+//    {
+//        products.removeIf(product -> product.getName().equals(name));
+//        System.out.println("Удаленный товар: " + name);
+//    }
+//    public Product searchProduct(String name)
+//    {
+//        for (Product product : products)
+//        {
+//            if (product.getName().equals(name))
+//            {
+//                return product;
+//            }
+//        }
+//        System.out.println("Товар не найден: " + name);
+//        return null;
+//    }
+//}
+
 //        12. Интерфейс "Платежная система"
 //        Создайте интерфейс PaymentSystem с методами pay() и refund(). Реализуйте классы CreditCard и PayPal, которые реализуют этот интерфейс.
-//
+//interface PaymentSystem
+//{
+//    void pay(double amount);
+//    void refund(double amount);
+//}
+//class CreditCard implements PaymentSystem
+//{
+//    @Override
+//    public void pay(double amount)
+//    {
+//        System.out.println("Оплачено " + amount + " с помощью кредитной карты.");
+//    }
+//    @Override
+//    public void refund(double amount)
+//    {
+//        System.out.println("Возврат " + amount + " на кредитную карту.");
+//    }
+//}
+//class PayPal implements PaymentSystem
+//{
+//    @Override
+//    public void pay(double amount)
+//    {
+//        System.out.println("Оплачено " + amount + " с помощью PayPal.");
+//    }
+//    @Override
+//    public void refund(double amount)
+//    {
+//        System.out.println("Возврат " + amount + " на PayPal.");
+//    }
+//}
+
 //        13. Генерация уникальных идентификаторов
 //        Создайте класс UniqueID, который генерирует уникальные идентификаторы для объектов каждого созданного класса. Реализуйте этот функционал через статическое поле и метод.
-//
+//class UniqueID
+//{
+//    private static int idCounter = 0;
+//    private int id;
+//    public UniqueID()
+//    {
+//        this.id = ++idCounter;
+//    }
+//    public int getId()
+//    {
+//        return id;
+//    }
+//    public static int getCurrentID()
+//    {
+//        return idCounter;
+//    }
+//}
+
 //        14. Класс "Точка" и "Прямоугольник"
 //        Создайте класс Point с координатами x и y. Реализуйте класс Rectangle, который содержит две точки (левая верхняя и правая нижняя). Реализуйте метод для вычисления площади прямоугольника.
-//
+//class Point
+//{
+//    private double x;
+//    private double y;
+//    public Point(double x, double y)
+//    {
+//        this.x = x;
+//        this.y = y;
+//    }
+//    public double getX()
+//    {
+//        return x;
+//    }
+//    public double getY()
+//    {
+//        return y;
+//    }
+//}
+//class Rectangle
+//{
+//    private Point topLeft;
+//    private Point bottomRight;
+//    public Rectangle(Point topLeft, Point bottomRight)
+//    {
+//        this.topLeft = topLeft;
+//        this.bottomRight = bottomRight;
+//    }
+//    public double getArea()
+//    {
+//        double width = Math.abs(bottomRight.getX() - topLeft.getX());
+//        double height = Math.abs(topLeft.getY() - bottomRight.getY());
+//        return width * height;
+//    }
+//}
+
 //        15. Комплексные числа
 //        Создайте класс ComplexNumber с полями для действительной и мнимой частей. Реализуйте методы для сложения, вычитания, умножения и деления комплексных чисел.
-//
+//class ComplexNumber
+//{
+//    private double real;
+//    private double imaginary;
+//    public ComplexNumber(double real, double imaginary)
+//    {
+//        this.real = real;
+//        this.imaginary = imaginary;
+//    }
+//    public ComplexNumber add(ComplexNumber other)
+//    {
+//        return new ComplexNumber(this.real + other.real, this.imaginary + other.imaginary);
+//    }
+//    public ComplexNumber subtract(ComplexNumber other)
+//    {
+//        return new ComplexNumber(this.real - other.real, this.imaginary - other.imaginary);
+//    }
+//    public ComplexNumber multiply(ComplexNumber other)
+//    {
+//        double realPart = this.real * other.real - this.imaginary * other.imaginary;
+//        double imaginaryPart = this.real * other.imaginary + this.imaginary * other.real;
+//        return new ComplexNumber(realPart, imaginaryPart);
+//    }
+//    public ComplexNumber divide(ComplexNumber other)
+//    {
+//        double denominator = other.real * other.real + other.imaginary * other.imaginary;
+//        double realPart = (this.real * other.real + this.imaginary * other.imaginary) / denominator;
+//        double imaginaryPart = (this.imaginary * other.real - this.real * other.imaginary) / denominator;
+//        return new ComplexNumber(realPart, imaginaryPart);
+//    }
+//    public void display()
+//    {
+//        System.out.println(real + " + " + imaginary + "i");
+//    }
+//}
+
 //        16. Перегрузка операторов: Матрица
 //        Создайте класс Matrix, представляющий двумерную матрицу. Реализуйте методы для сложения и умножения матриц. Продемонстрируйте перегрузку методов.
-//
+//class Matrix
+//{
+//    private int[][] data;
+//    private int rows, cols;
+//    public Matrix(int rows, int cols)
+//    {
+//        this.rows = rows;
+//        this.cols = cols;
+//        data = new int[rows][cols];
+//    }
+//    public void setElement(int row, int col, int value)
+//    {
+//        data[row][col] = value;
+//    }
+//    public Matrix add(Matrix other)
+//    {
+//        if (this.rows != other.rows || this.cols != other.cols)
+//        {
+//            throw new IllegalArgumentException("Размеры матрицы должны совпадать для сложения.");
+//        }
+//        Matrix result = new Matrix(this.rows, this.cols);
+//        for (int i = 0; i < rows; i++)
+//        {
+//            for (int j = 0; j < cols; j++)
+//            {
+//                result.data[i][j] = this.data[i][j] + other.data[i][j];
+//            }
+//        }
+//        return result;
+//    }
+//    public Matrix multiply(Matrix other)
+//    {
+//        if (this.cols != other.rows)
+//        {
+//            throw new IllegalArgumentException("Размеры матрицы должны совпадать при умножении.");
+//        }
+//        Matrix result = new Matrix(this.rows, other.cols);
+//        for (int i = 0; i < this.rows; i++)
+//        {
+//            for (int j = 0; j < other.cols; j++)
+//            {
+//                for (int k = 0; k < this.cols; k++)
+//                {
+//                    result.data[i][j] += this.data[i][k] * other.data[k][j];
+//                }
+//            }
+//        }
+//        return result;
+//    }
+//    public void display()
+//    {
+//        for (int i = 0; i < rows; i++)
+//        {
+//            for (int j = 0; j < cols; j++)
+//            {
+//                System.out.print(data[i][j] + " ");
+//            }
+//            System.out.println();
+//        }
+//    }
+//}
+
 //        17. Создание игры с использованием ООП
 //        Реализуйте классы для небольшой текстовой игры, такие как Player, Enemy, Weapon, с полями и методами, описывающими их поведение.
+//class Player
+//{
+//    private String name;
+//    private int health;
+//    private Weapon weapon;
+//    public Player(String name, int health, Weapon weapon)
+//    {
+//        this.name = name;
+//        this.health = health;
+//        this.weapon = weapon;
+//    }
+//    public void attack(Enemy enemy)
+//    {
+//        enemy.takeDamage(weapon.getDamage());
+//        System.out.println(name + " нападает " + enemy.getName() + " с " + weapon.getName());
+//    }
+//    public void takeDamage(int damage)
+//    {
+//        health -= damage;
+//        System.out.println(name + " получил " + damage + " урона. Здоровье: " + health);
+//    }
+//    public boolean isAlive()
+//    {
+//        return health > 0;
+//    }
+//}
+//class Enemy
+//{
+//    private String name;
+//    private int health;
+//    public Enemy(String name, int health)
+//    {
+//        this.name = name;
+//        this.health = health;
+//    }
+//    public void takeDamage(int damage)
+//    {
+//        health -= damage;
+//        System.out.println(name + " получил " + damage + " урона. Здоровье: " + health);
+//    }
+//    public String getName()
+//    {
+//        return name;
+//    }
+//    public boolean isAlive()
+//    {
+//        return health > 0;
+//    }
+//}
+//class Weapon
+//{
+//    private String name;
+//    private int damage;
 //
+//    public Weapon(String name, int damage)
+//    {
+//        this.name = name;
+//        this.damage = damage;
+//    }
+//    public String getName()
+//    {
+//        return name;
+//    }
+//    public int getDamage()
+//    {
+//        return damage;
+//    }
+//}
+
 //        18. Автоматизированная система заказов
 //        Создайте классы Order, Customer, и Product. Реализуйте систему, где можно добавлять заказы, отображать общую стоимость заказа и просматривать историю заказов.
-//
+//class Product
+//{
+//    private String name;
+//    private double price;
+//    public Product(String name, double price)
+//    {
+//        this.name = name;
+//        this.price = price;
+//    }
+//    public String getName()
+//    {
+//        return name;
+//    }
+//    public double getPrice()
+//    {
+//        return price;
+//    }
+//}
+//class Order
+//{
+//    private ArrayList<Product> products;
+//    private Customer customer;
+//    public Order(Customer customer)
+//    {
+//        this.customer = customer;
+//        products = new ArrayList<>();
+//    }
+//    public void addProduct(Product product)
+//    {
+//        products.add(product);
+//        System.out.println(product.getName() + " добавлен в заказ.");
+//    }
+//    public double getTotalCost()
+//    {
+//        double total = 0;
+//        for (Product product : products)
+//        {
+//            total += product.getPrice();
+//        }
+//        return total;
+//    }
+//    public void displayOrder()
+//    {
+//        System.out.println("Заказ " + customer.getName() + ":");
+//        for (Product product : products)
+//        {
+//            System.out.println(product.getName() + " - $" + product.getPrice());
+//        }
+//        System.out.println("Общая стоимость: $" + getTotalCost());
+//    }
+//}
+//class Customer
+//{
+//    private String name;
+//    public Customer(String name)
+//    {
+//        this.name = name;
+//    }
+//    public String getName()
+//    {
+//        return name;
+//    }
+//}
+
 //        19. Наследование: Электроника
 //        Создайте класс Device с полем brand и методами turnOn() и turnOff(). Реализуйте классы Smartphone и Laptop, которые наследуют от Device и добавляют уникальные методы, например, takePhoto() для смартфона.
+//class Device
+//{
+//    protected String brand;
+//    public Device(String brand)
+//    {
+//        this.brand = brand;
+//    }
+//    public void turnOn()
+//    {
+//        System.out.println(brand + " включен.");
+//    }
+//    public void turnOff()
+//    {
+//        System.out.println(brand + " выключен.");
+//    }
+//}
+//class Smartphone extends Device
+//{
+//    public Smartphone(String brand)
+//    {
+//        super(brand);
+//    }
+//    public void takePhoto()
+//    {
+//        System.out.println(brand + " сделал фото.");
+//    }
+//}
+//class Laptop extends Device
+//{
+//    public Laptop(String brand)
+//    {
+//        super(brand);
+//    }
+//    public void code()
+//    {
+//        System.out.println(brand + " используется для кодирования.");
+//    }
+//}
 
 //        20. Игра "Крестики-нолики"
 //        Разработайте классы для игры "Крестики-нолики". Создайте класс Game, который управляет логикой игры, и классы Player, описывающие поведение игроков.
-
+//class Game
+//{
+//    private char[][] board;
+//    private char currentPlayer;
+//    public Game()
+//    {
+//        board = new char[3][3];
+//        currentPlayer = 'X';
+//        initializeBoard();
+//    }
+//    public void initializeBoard()
+//    {
+//        for (int i = 0; i < 3; i++)
+//        {
+//            for (int j = 0; j < 3; j++)
+//            {
+//                board[i][j] = '-';
+//            }
+//        }
+//    }
+//    public void printBoard()
+//    {
+//        System.out.println("Поле:");
+//        for (int i = 0; i < 3; i++)
+//        {
+//            for (int j = 0; j < 3; j++)
+//            {
+//                System.out.print(board[i][j] + " ");
+//            }
+//            System.out.println();
+//        }
+//    }
+//    public boolean isBoardFull()
+//    {
+//        for (int i = 0; i < 3; i++)
+//        {
+//            for (int j = 0; j < 3; j++)
+//            {
+//                if (board[i][j] == '-')
+//                {
+//                    return false;
+//                }
+//            }
+//        }
+//        return true;
+//    }
+//    public boolean checkWin()
+//    {
+//        // Проверка рядов и столбцов
+//        for (int i = 0; i < 3; i++)
+//        {
+//            if ((board[i][0] == currentPlayer && board[i][1] == currentPlayer && board[i][2] == currentPlayer) ||
+//                    (board[0][i] == currentPlayer && board[1][i] == currentPlayer && board[2][i] == currentPlayer))
+//            {
+//                return true;
+//            }
+//        }
+//        // Проверка диагоналей
+//        if ((board[0][0] == currentPlayer && board[1][1] == currentPlayer && board[2][2] == currentPlayer) ||
+//                (board[0][2] == currentPlayer && board[1][1] == currentPlayer && board[2][0] == currentPlayer))
+//        {
+//            return true;
+//        }
+//        return false;
+//    }
+//    public void changePlayer()
+//    {
+//        currentPlayer = (currentPlayer == 'X') ? 'O' : 'X';
+//    }
+//    public void playGame()
+//    {
+//        Scanner scanner = new Scanner(System.in);
+//        boolean gameEnded = false;
+//        while (!gameEnded)
+//        {
+//            printBoard();
+//            int row, col;
+//            do
+//            {
+//                System.out.println("Игрок " + currentPlayer + ", введите свой ход (строку и столбец): ");
+//                row = scanner.nextInt();
+//                col = scanner.nextInt();
+//            }
+//            while (row < 0 || col < 0 || row >= 3 || col >= 3 || board[row][col] != '-');
+//            board[row][col] = currentPlayer;
+//            gameEnded = checkWin();
+//            if (!gameEnded)
+//            {
+//                if (isBoardFull())
+//                {
+//                    System.out.println("Ничья!");
+//                    break;
+//                }
+//                changePlayer();
+//            }
+//            else
+//            {
+//                printBoard();
+//                System.out.println("Игрок " + currentPlayer + " победил!");
+//            }
+//        }
+//        scanner.close();
+//    }
+//}
