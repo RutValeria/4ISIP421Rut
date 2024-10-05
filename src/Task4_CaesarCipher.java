@@ -1,20 +1,9 @@
-import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Scanner;
-
 public class Task4_CaesarCipher
 {
-    public static void main(String[] args)
-    {
-
-    }
     // Алфавит
     private static final char[] Alphabet = {'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж',
             'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у',
-            'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я', '.',
-            ',', '«', '»', '"', '\'', ':', '!', '?', ' '};
+            'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я'};
     private static final int AlphabetSize = Alphabet.length;
 
     // Метод для сдвига символа на заданое количество позиций
@@ -46,22 +35,34 @@ public class Task4_CaesarCipher
         return -1; // Возвращаем -1, если символ не найден
     }
 
-    // Метод для чтения файла
-    private String ReadFile(String FilePath) throws IOException
+    // Шифрование
+    public String Encrypt(String text, int key)
     {
-        return new String(Files.readAllBytes(Paths.get(FilePath)));
+        StringBuilder EncryptText = new StringBuilder();
+        for (char symbol : text.toCharArray())
+        {
+            EncryptText.append(ShiftSymbol(symbol, key));
+        }
+        return EncryptText.toString();
     }
 
-    // Метод для записи в файл
-    private void WriteFile(String Content, String FilePath) throws IOException
+    // Расшифровка
+    public String Decrypt(String text, int key)
     {
-        Files.write(Paths.get(FilePath), Content.getBytes());
+        return Encrypt(text, -key); // Расшифрока, как шифрование с отрицательным ключом
     }
 
-    // Метод для проверки существования файла
-    private boolean ValidateInput(String FilePath)
+    // Brute force
+    public void BruteForce(String text)
     {
-        return Files.exists(Paths.get(FilePath));
+        for (int key = 1; key < AlphabetSize; key++)
+        {
+            StringBuilder DecryptText = new StringBuilder();
+            for (char symbol : text.toCharArray())
+            {
+                DecryptText.append(ShiftSymbol(symbol, -key));
+            }
+            System.out.println("Ключ: " + key + " Текст: " + DecryptText);
+        }
     }
-
 }
