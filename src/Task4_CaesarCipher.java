@@ -1,25 +1,32 @@
 public class Task4_CaesarCipher
 {
     // Алфавит
-    private static final char[] Alphabet = {'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж',
-            'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у',
-            'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я'};
+    private static final char[] Alphabet =
+            {'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й',
+            'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф',
+            'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я',
+            'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й',
+            'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф',
+            'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я'};
     private static final int AlphabetSize = Alphabet.length;
 
     // Метод для сдвига символа на заданое количество позиций
     private char ShiftSymbol(char symbol, int key)
     {
-        int index = FindCharIndex(symbol);
-        if (index == -1)
+        for (int i = 0; i < Alphabet.length; i++)
         {
-            return symbol; // Если символа нет в алфавите, возвращаем его без изменений
+            if (Alphabet[i] == symbol)
+            {
+                int ShiftIndex = (i + key) % AlphabetSize;
+                if (ShiftIndex < 0)
+                {
+                    ShiftIndex += AlphabetSize;
+                }
+                return Alphabet[ShiftIndex];
+            }
         }
-        int ShiftIndex = (index + key) % AlphabetSize;
-        if (ShiftIndex < 0)
-        {
-            ShiftIndex += AlphabetSize; // Убираем отрицательные индексы
-        }
-        return Alphabet[ShiftIndex];
+        // Если символ не найден в алфавите, возвращаем его без изменений
+        return symbol;
     }
 
     // Метод для поиска индекса символа в алфавите

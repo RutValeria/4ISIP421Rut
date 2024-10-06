@@ -36,21 +36,24 @@ public class Task4_Menu
         System.out.println("Введите путь к входному файлу: ");
         String InputFile = scanner.nextLine();
 
-        System.out.println("введите путь к выходному файлу: ");
-        String OutputFile = scanner.nextLine();
-
+        // Проверка существования входного файла
         if (!fileManager.ValidateInput(InputFile))
         {
             System.out.println("Файл не найден!");
             return;
         }
 
+        // Чтение содержимого входного файла
         try
         {
             String content = fileManager.ReadFile(InputFile);
 
+            // Обработка команд шифрования и расшифровки
             if (option == 1 || option == 2)
             {
+                System.out.println("Введите путь к выходному файлу: ");
+                String OutputFile = scanner.nextLine();
+
                 System.out.println("Введите ключ: ");
                 int key = scanner.nextInt();
                 scanner.nextLine(); // Очистка буфера
@@ -65,12 +68,14 @@ public class Task4_Menu
                     Result = cipher.Decrypt(content, key);
                 }
 
+                // Запись результата в выходной файл
                 fileManager.WriteFile(Result, OutputFile);
                 System.out.println("Операция завершена!");
             }
             else if (option == 3)
             {
                 cipher.BruteForce(content);
+                System.out.println("Brute force завершен!");
             }
             else
             {
