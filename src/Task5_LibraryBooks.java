@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Task5_LibraryBooks
 {
     // Данные для подключения к базе
-    private static final String URL = "jdbc:sqlserver://localhost:1433; databaseName=BookLibrary";
+    private static final String URL = "jdbc:sqlserver://localhost:1433;databaseName=BookLibrary;encrypt=false;trustServerCertificate=true";
     private static final String USER = "Valeri";
     private static final String PASSWORD = "1qaz!QAZ";
 
